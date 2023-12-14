@@ -26,6 +26,8 @@
         <th>Reservation_Status</th>
         <th>Update</th>
         <th>Delete</th>
+        <th>Services</th>
+        <th>Guests</th>
     </tr>");
     foreach($reservations as $reservation){
         
@@ -47,6 +49,18 @@
                 <form action='../../forms/reservations/delete_warning_reservation.php' method='POST'>
                     <input type='text' value='$reservation[reservation_id]' name=reservation_id hidden>
                     <input type='submit' name='submit' value='Delete'>
+                </form>
+            </td>
+            <td>
+                <form action='../../actions/services/services_assign_select.php' method='POST'>
+                    <input type='text' value='$reservation[reservation_id]' name=reservation_id hidden>
+                    <input type='submit' name='submit' value='Services'>
+                </form>
+            </td>
+            <td>
+                <form action='../../actions/guests/guests_assign_select.php' method='POST'>
+                    <input type='text' value='$reservation[reservation_id]' name=reservation_id hidden>
+                    <input type='submit' name='submit' value='Guests'>
                 </form>
             </td>
             

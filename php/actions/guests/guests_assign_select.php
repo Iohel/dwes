@@ -4,7 +4,7 @@
 <?php
     
     //SQL query
-
+    $reservation_id = $_POST['reservation_id'];
     $sql = 'SELECT * from 043_guests';
 
     $result = mysqli_query($conn, $sql);
@@ -27,18 +27,14 @@
             <td>" . $guest['guest_dob'] . "</td>
             <td>" . $guest['guest_nif'] . "</td>     
             <td>
-                <form action='../../forms/guests/update_existing_guest.php' method='POST'>
+                <form action='../insert_reservation_guest.php' method='POST'>
                     <input type='text' value='$guest[guest_id]' name=guest_id hidden>
-                    <input type='submit' name='submit' value='Update'>
+                    <input type='text' value='$reservation_id' name=reservation_id hidden>
+                    <input type='submit' name='submit' value='Assign'>
                 </form>
             </td> 
-            <td>
-                <form action='../../forms/guests/delete_warning_guest.php' method='POST'>
-                    <input type='text' value='$guest[guest_id]' name=guest_id hidden>
-                    <input type='submit' name='submit' value='Delete'>
-                </form>
-            </td>
-            <td> 
+            
+            
         </tr>"
     );   
     }

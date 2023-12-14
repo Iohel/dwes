@@ -29,7 +29,7 @@
             <a class="col btn" href='/student043/dwes/index.php'>Home</a>
             <div class="btn-group">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}if($type == 'Customer'){echo 'hidden';}?>>
-                    Rooms Forms
+                    Rooms
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href='/student043/dwes/php/actions/rooms/rooms_basic_select.php'>Rooms Select</a></li>
@@ -40,7 +40,7 @@
             </div>
             <div class="btn-group">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}?>>
-                    Customer Forms
+                    Customer
                 </button>
                 <ul class="dropdown-menu">
                     <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/actions/customers/customers_basic_select.php'>Customer Select</a></li>
@@ -52,11 +52,11 @@
             </div>
             <div class="btn-group">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}?>>
-                    Reservation Forms
+                    Reservation
                 </button>
                 <ul class="dropdown-menu">
                     <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/actions/reservations/reservations_basic_select.php'>Reservation Select</a></li>
-                    <li><a class="dropdown-item" href='/student043/dwes/php/actions/reservations/reservations_select_from_customer.php'>Reservation Select</a></li>
+                    <li><a class="dropdown-item" href='/student043/dwes/php/actions/reservations/reservations_select_from_customer.php'>Reservation Customer Select</a></li>
                     <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/forms/reservations/insert_new_reservation.php'>Reservation Insert</a></li>
                     <li><a class="dropdown-item" href='/student043/dwes/php/forms/reservations/select_single_reservation_update.php'>Reservation Update</a></li>
                     <li <?php if($type == 'Admin'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/forms/reservations/select_single_reservation_delete.php'>Reservation Delete</a></li>
@@ -64,13 +64,24 @@
             </div>
             <div class="btn-group">
                 <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}?>>
-                    Services Forms
+                    Services
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href='/student043/dwes/php/actions/services/services_basic_select.php'>Service Select</a></li>
                     <li><a class="dropdown-item" href='/student043/dwes/php/forms/services/insert_new_service.php'>Service Insert</a></li>
                     <li><a class="dropdown-item" href='/student043/dwes/php/forms/services/select_single_service_update.php'>Service Update</a></li>
                     <li><a class="dropdown-item" href='/student043/dwes/php/forms/services/select_single_service_delete.php'>Service Delete</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}?>>
+                    Guests
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href='/student043/dwes/php/actions/guests/guests_basic_select.php'>Guest Select</a></li>
+                    <li><a class="dropdown-item" href='/student043/dwes/php/forms/guests/insert_single_guest.php'>Guest Insert</a></li>
+                    <li><a class="dropdown-item" href='/student043/dwes/php/forms/guests/select_single_guest_update.php'>Guest Update</a></li>
+                    <li><a class="dropdown-item" href='/student043/dwes/php/forms/guests/select_single_guest_delete.php'>Guest Delete</a></li>
                 </ul>
             </div>
             

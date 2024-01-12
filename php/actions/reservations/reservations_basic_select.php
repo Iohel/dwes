@@ -28,6 +28,7 @@
         <th>Delete</th>
         <th>Services</th>
         <th>Guests</th>
+        <th>Check Out</th>
     </tr>");
     foreach($reservations as $reservation){
         
@@ -61,6 +62,12 @@
                 <form action='../../actions/guests/guests_assign_select.php' method='POST'>
                     <input type='text' value='$reservation[reservation_id]' name=reservation_id hidden>
                     <input type='submit' name='submit' value='Guests'>
+                </form>
+            </td>
+            <td>
+                <form action='../../actions/check_out.php' method='POST'>
+                    <input type='text' value='$reservation[reservation_id]' name=reservation_id hidden>
+                    <input type='submit' name='submit' value='Check_Out'>
                 </form>
             </td>
             

@@ -84,6 +84,15 @@
                     <li><a class="dropdown-item" href='/student043/dwes/php/forms/guests/select_single_guest_delete.php'>Guest Delete</a></li>
                 </ul>
             </div>
+            <div class="btn-group">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}?>>
+                    Admin
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href='/student043/dwes/php/actions/guests/guests_basic_select.php'>Check In</a></li>
+                    <li><a class="dropdown-item" href='/student043/dwes/php/forms/guests/insert_single_guest.php'>Check Out</a></li>
+                </ul>
+            </div>
             
         </div>
         <p><?php echo($username)?></p>

@@ -18,7 +18,7 @@
     $_SESSION['login'] = "Logout";
     $_SESSION['log_form'] = "index.php";
 
-    header("Location: ../../index.php")
+    
 ?>
 
 <form action='../../index.php'>

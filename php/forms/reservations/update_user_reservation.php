@@ -12,16 +12,34 @@
 
 <form action="../../actions/reservations/reservations_basic_update.php" method="POST">
     <h1>Update Single Form</h1>
-    <label for="">reservation_id</label>
-    <input type="number" name="reservation_id" value="<?php echo $reservation_id?>" readonly>
-    <label for="">room_id</label>
-    <input type="date" name="start_date" value=<?php echo $reservation[0]["start_date"]?>>
-    <label for="">number_nights</label>
-    <input type="date" name="end_date" value=<?php echo $reservation[0]["end_date"]?>>
-    <label for="">number_guests</label>
-    <input type="number" name="number_guests" value=<?php echo $reservation[0]["number_guests"]?>>
-    <label for="">Input status of reservation.</label>
-    <input type="text" name="reservation_status" value=<?php echo $reservation[0]["reservation_status"]?>>
+    <div hidden>
+        <label for="">reservation_id</label>
+        <input type="number" name="reservation_id" value="<?php echo $reservation_id?>" readonly> 
+    </div>
+    <div hidden>
+        <label for="">room_id</label>
+        <input type="number" name="room_id" value="<?php echo $reservation[0]["room_id"]?>">
+    </div>
+    <div hidden>
+        <label for="">customer_id</label>
+        <input type="number" name="customer_id" value=<?php echo $reservation[0]["customer_id"]?>>
+    </div>
+    <div>
+        <label for="">start_date</label>
+        <input type="date" name="start_date" value=<?php echo $reservation[0]["start_date"]?>>
+    </div>
+    <div>
+        <label for="">end_date</label>
+        <input type="date" name="end_date" value=<?php echo $reservation[0]["end_date"]?>>   
+    </div>
+    <div>
+        <label for="">number_guests</label>
+        <input type="number" name="number_guests" value=<?php echo $reservation[0]["number_guests"]?>>
+    </div>
+    <div>
+        <label for="">Input status of reservation.</label>
+        <input type="text" name="reservation_status" value=<?php echo $reservation[0]["reservation_status"]?>>
+    </div>
     <input type="submit" name="submit" value="submit">
 </form>
 <?php

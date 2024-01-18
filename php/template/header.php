@@ -44,6 +44,7 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/actions/customers/customers_basic_select.php'>Customer Select</a></li>
+                    <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/forms/customers/customer_search_form.php'>Search Customer</a></li>
                     <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/forms/customers/insert_single_customer.php'>Customer Insert</a></li>
                     <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/forms/customers/select_single_customer_update.php'>Customer Update</a></li>
                     <li><a class="dropdown-item" href='/student043/dwes/php/forms/customers/update_logged_customer.php'>Update Profile</a></li>

@@ -42,7 +42,10 @@
             }
         }
     }
-    
+    $reservation_status = "CheckOut";
+    $sql = "UPDATE 043_reservations SET reservation_status='$reservation_status' WHERE reservation_id=$reservation_id";
+    mysqli_query($conn, $sql);
+
     $base = $types[0]['price_night_person'];
     $date = $dateArray[0]['date'];
     $person = $guests[0]['guests']+1;

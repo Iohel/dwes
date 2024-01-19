@@ -26,9 +26,10 @@
         <th>Reservation_Status</th>
         <th>Update</th>
         <th>Delete</th>
+        <th>Commentary</th>
     </tr>");
     foreach($reservations as $reservation){
-        
+        //Add here a check for comments.
         echo (
         "<tr>
             <td>" . $rooms[$reservation['room_id']-1]['hotel_number'] . "</td>       
@@ -47,6 +48,12 @@
                 <form action='../../forms/reservations/delete_warning_reservation.php' method='POST'>
                     <input type='text' value='$reservation[reservation_id]' name=reservation_id hidden>
                     <input type='submit' name='submit' value='Cancel'>
+                </form>
+            </td>
+            <td>
+                <form action='../../forms/reservations/delete_warning_reservation.php' method='POST'>
+                    <input type='text' value='$reservation[reservation_id]' name=reservation_id hidden>
+                    <input type='submit' name='submit' value='Comments'>
                 </form>
             </td>
             

@@ -2,7 +2,9 @@
 <?php
     //variable catching 
     $reservation_id = $_POST['reservation_id'];
-    $service_id = $_POST['service_id']; 
+    $service_id = $_POST['service_id'];
+    echo($reservation_id);
+    echo($service_id);
 ?>
 <?php require($_SERVER['DOCUMENT_ROOT']. '/student043/dwes/php/template/connection.php');?>
 <?php 

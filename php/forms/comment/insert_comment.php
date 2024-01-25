@@ -4,13 +4,12 @@
     
     $reservation_id = $_POST['reservation_id'];
     
-    $sql = "INSERT INTO 043_comments(`reservation_id`,`customer_id`,`timestamp`,) 
-    VALUES ('$reservation_id','$customer_id',CURDATE())";
+    $sql = "INSERT INTO 043_comments(reservation_id,customer_id) VALUES ('$reservation_id','$customer_id')";
     mysqli_query($conn, $sql);
     mysqli_close($conn);
 
 ?>
-<form action="../../actions/guests/guests_basic_insert.php" method="POST"  class="row-cols-2">
+<form action="../../actions/comments/update_comment.php" method="POST"  class="row-cols-2">
     <h1>Insert Commentary Form</h1>
     
     <input name="reservation" type="text" value="<?php $reservation_id?>" hidden>

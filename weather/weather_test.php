@@ -17,6 +17,10 @@
                     http.open("GET","./weather_action.php?response="+response,true);
                 
                     http.send();
+                }else{
+                    let response = this.responseText;
+                    console.log(typeof response);
+                    document.getElementById("output").innerHTML = response;
                 }
             }
         }

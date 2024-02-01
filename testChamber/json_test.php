@@ -3,16 +3,36 @@
 
 <?php
 
-    $reservation_id = $_POST['reservation_id'];
-    $service_id = $_POST['service_id']; 
+    $reservation_id = $_POST['reservation_id'] ?? 10;
+    $service_id = $_POST['service_id'] ?? 4; 
 
-    $sql = "SELECT * from 043_reservations";
+    $sql = "SELECT * from 043_reservations WHERE reservation_id = $reservation_id";
     $result = mysqli_query($conn, $sql);
     $reservations = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    $json = file_get_contents($reservations[0]['extra_json']);
+    $sql = "SELECT * from 043_services WHERE service_id = $service_id";
+    $result = mysqli_query($conn,$sql);
+    $services = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    $json = $reservations[0]['extras_json'];
+    $name = $services[0]['service_name'];
+    $price = $services[0]['service_price'];
     $decoded_json = json_decode($json,true);
-    $decoded_json = $decoded_json + [];
+    $data = array("Service_Name"=>$name,"Service_Price"=>$price);
+    if($decoded_json == null){
+        $decoded_json = "["+json_encode($data)+"]";
+    }else{
+        array_push($decoded_json,$data);
+    }
+    
+    //jsonappenarray
+    /* echo($name);
+    echo($price); */
+    $json = json_encode($decoded_json);
+
+    $sql = "UPDATE 043_reservations SET extras_json = '$json' WHERE reservation_id = $reservation_id";
+    $result = mysqli_query($conn, $sql);
+    
 
 ?>
 

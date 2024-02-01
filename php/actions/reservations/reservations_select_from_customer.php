@@ -51,7 +51,7 @@
                 </form>
             </td>
             <td>
-                <form action='../../forms/comment/insert_comment.php' method='POST'>
+                <form action='../../forms/comment/comment_insert_form' method='POST'>
                     <input type='text' value='$reservation[reservation_id]' name=reservation_id hidden>
                     <input type='submit' name='submit' value='Comments'>
                 </form>

@@ -15,9 +15,9 @@
                 }
             }
             
-            http.open("GET","./test_database.php?q="+str,true);
-            
-            http.send();
+            http.open("POST","./customer_search_action.php",true);
+            http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            http.send("value="+str);
             
         }
     }

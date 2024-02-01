@@ -24,7 +24,7 @@
             <td>" . $service['service_name'] . "</td>
             <td>" . $service['service_price'] . "</td>   
             <td>
-                <form action='../../actions/insert_reservation_service.php' method='POST'>
+                <form action='../../../testChamber/json_test.php' method='POST'>
                     <input type='text' value='$service[service_id]' name=service_id hidden>
                     <input type='text' value='$reservation_id' name=reservation_id hidden>
                     <input type='submit' name='submit' value='Insert'>

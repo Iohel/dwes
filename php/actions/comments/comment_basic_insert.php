@@ -13,7 +13,8 @@
 ?>
 <?php require($_SERVER['DOCUMENT_ROOT']. '/student043/dwes/php/template/connection.php');?>
 <?php
-    $sql = "UPDATE 043_comments SET comment='$textarea',score='$score' WHERE reservation_id = '$reservation_id'";
+    
+    $sql = "INSERT INTO 043_comments(reservation_id,customer_id,timestamp,comment,score,status) VALUES ($reservation_id,$customer_id,CURRENT_DATE(),'$textarea',$score,0)";
     mysqli_query($conn, $sql);
     mysqli_close($conn);
 ?>

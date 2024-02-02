@@ -4,15 +4,12 @@
     $reservation_id = $_POST['reservation_id'];
     
     $sql_reservations = "SELECT * from 043_reservations WHERE reservation_id = '$reservation_id'";
-    $sql_extras = "SELECT * from 043_services_reservation WHERE reservation_id = '$reservation_id'";
     $sql_guests = "SELECT COUNT(*) AS guests from 043_guest_reservation WHERE reservation_id = '$reservation_id'";
     
     $result1 = mysqli_query($conn, $sql_reservations);
-    $result2 = mysqli_query($conn, $sql_extras);
     $result3 = mysqli_query($conn, $sql_guests);
 
     $reservations = mysqli_fetch_all($result1, MYSQLI_ASSOC);
-    $extras = mysqli_fetch_all($result2, MYSQLI_ASSOC);
     $guests = mysqli_fetch_all($result3,MYSQLI_ASSOC);
 
     $room_id = $reservations[0]['room_id'];
@@ -32,16 +29,14 @@
     $dateArray = mysqli_fetch_all($result_date, MYSQLI_ASSOC);
     
     $price = 0;
-    $sql_services = "SELECT * FROM 043_services";
-    $result6 = mysqli_query($conn, $sql_services);
-    $services = mysqli_fetch_all($result6,MYSQLI_ASSOC);
+    
+    $extras = json_decode($reservations[0]['extras_json'],true);
+    
     foreach ($extras as $extra) {
-        foreach ($services as $service) {
-            if($service['service_id']==$extra['service_id']){
-                $price = $price + $service['service_price'];
-            }
-        }
+        echo($extra['Service_Name'].":".$extra['Service_Price']."<br/>");
+        $price = $price + $extra['Service_Price'];
     }
+    
     $reservation_status = "CheckOut";
     $sql = "UPDATE 043_reservations SET reservation_status='$reservation_status' WHERE reservation_id=$reservation_id";
     mysqli_query($conn, $sql);
@@ -51,6 +46,7 @@
     $person = $guests[0]['guests']+1;
     
     $room = $base*$date*$person;
+    
     echo("<div>Habitacion</div>");
     echo("<div>$room</div>");
     echo("<div>Extras</div>");

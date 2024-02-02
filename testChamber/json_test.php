@@ -20,16 +20,17 @@
     $decoded_json = json_decode($json,true);
     $data = array("Service_Name"=>$name,"Service_Price"=>$price);
     if($decoded_json == null){
-        $decoded_json = "["+json_encode($data)+"]";
+        $decoded_json = [$data];
     }else{
         array_push($decoded_json,$data);
     }
+    
     
     //jsonappenarray
     /* echo($name);
     echo($price); */
     $json = json_encode($decoded_json);
-
+    echo($json);
     $sql = "UPDATE 043_reservations SET extras_json = '$json' WHERE reservation_id = $reservation_id";
     $result = mysqli_query($conn, $sql);
     

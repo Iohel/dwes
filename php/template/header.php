@@ -86,12 +86,12 @@
                 </ul>
             </div>
             <div class="btn-group">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}?>>
-                    Admin
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                    INFO
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href='/student043/dwes/php/actions/guests/guests_basic_select.php'>Check In</a></li>
-                    <li><a class="dropdown-item" href='/student043/dwes/php/forms/guests/insert_single_guest.php'>Check Out</a></li>
+                    <li><a class="dropdown-item" href='/student043/dwes/php/actions/comments/comment_basic_select.php'>Weather</a></li>
+                    <li><a class="dropdown-item" href='/student043/dwes/php/actions/comments/comment_basic_select.php'>Comments</a></li>
                 </ul>
             </div>
             

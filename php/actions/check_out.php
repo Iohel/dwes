@@ -31,11 +31,13 @@
     $price = 0;
     
     $extras = json_decode($reservations[0]['extras_json'],true);
-    
-    foreach ($extras as $extra) {
-        echo($extra['Service_Name'].":".$extra['Service_Price']."<br/>");
-        $price = $price + $extra['Service_Price'];
+    if($extras != null){
+        foreach ($extras as $extra) {
+            echo($extra['Service_Name'].":".$extra['Service_Price']."<br/>");
+            $price = $price + $extra['Service_Price'];
+        }
     }
+    
     
     $reservation_status = "CheckOut";
     $sql = "UPDATE 043_reservations SET reservation_status='$reservation_status' WHERE reservation_id=$reservation_id";

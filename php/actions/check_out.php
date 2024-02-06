@@ -29,11 +29,11 @@
     $dateArray = mysqli_fetch_all($result_date, MYSQLI_ASSOC);
     
     $price = 0;
-    
+    $string ="";
     $extras = json_decode($reservations[0]['extras_json'],true);
     if($extras != null){
         foreach ($extras as $extra) {
-            echo($extra['Service_Name'].":".$extra['Service_Price']."<br/>");
+            $string = $string.$extra['Service_Name'].": ".$extra['Service_Price']."€<br/>";
             $price = $price + $extra['Service_Price'];
         }
     }
@@ -49,12 +49,16 @@
     
     $room = $base*$date*$person;
     
-    echo("<div>Habitacion</div>");
-    echo("<div>$room</div>");
-    echo("<div>Extras</div>");
-    echo("<div>$price</div>");
-    echo("<div>Total</div>");
+    echo("<h2>Habitacion</h2>");
+    echo("<h5>Room Base Price: ".$base."€</h5>");
+    echo("<h5>Number of Days: ".$date."</h5>");
+    echo("<h5>Amount of Customers: ".$person."</h5>");
+    echo("<h5>Room Total: ".$room."€</h5>");
+    echo("<h2>Extras</h2>");
+    echo("<h5>$string</h5>");
+    echo("<h5>Extra Total: ".$price."€</h5>");
+    echo("<h1>Total</h1>");
     $total = $price+($base*$date*$person);
-    echo("<div>$total</div>")
+    echo("<h2>".$total."€</h2>")
 ?>
 <?php require($_SERVER['DOCUMENT_ROOT']. '/student043/dwes/php/template/footer.php');?>

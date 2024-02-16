@@ -2,7 +2,8 @@
 <?php require($_SERVER['DOCUMENT_ROOT']. '/student043/dwes/php/template/connection.php');?>
 
 <?php
-
+    $checkbox[]=$_Post['checkbox'];
+    print_r($checkbox);
     $reservation_id = $_POST['reservation_id'] ?? 10;
     $service_id = $_POST['service_id'] ?? 4; 
 

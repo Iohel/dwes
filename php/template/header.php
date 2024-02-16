@@ -93,7 +93,7 @@
                 INFO
             </button>
             <div class="dropdown-content">
-                <li><a class="dropdown-item" href='/student043/dwes/php/actions/comments/comment_basic_select.php'>Weather</a></li>
+                <li><a class="dropdown-item" href='/student043/dwes/weather/weather_select_output.php'>Weather</a></li>
                 <li><a class="dropdown-item" href='/student043/dwes/php/actions/comments/comment_basic_select.php'>Comments</a></li>
             </div>
         </div>

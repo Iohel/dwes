@@ -10,7 +10,7 @@
     $customers = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 
-<form action="../../actions/customers/customers_basic_update.php" method="POST">
+<form action="../../actions/customers/customers_basic_update.php" method="POST" class="form">
     <h1>Update Single Form</h1>
     
     <label for="">customer_id</label>

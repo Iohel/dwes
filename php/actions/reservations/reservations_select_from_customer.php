@@ -33,7 +33,7 @@
     </tr>");
     foreach($reservations as $reservation){
         foreach ($comments as $id) {
-            echo($reservation['reservation_id']."/".$id['reservation_id']."<br/>");
+            
             if($reservation['reservation_status'] != 'CheckOut' || $reservation['reservation_id'] == $id['reservation_id']){
                 
                 $disable = true;

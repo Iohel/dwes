@@ -14,8 +14,10 @@
         $sql = "UPDATE 043_comments SET status = '$option' WHERE comment_id = '$id'";
         mysqli_query($conn, $sql);
         mysqli_close($conn);
+
+      
         
     }
 
-    
+    header("Location: /student043/dwes/php/forms/comment/comment_edit_form.php"); 
 ?>

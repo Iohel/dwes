@@ -8,16 +8,17 @@
     foreach ($comments as $comment) {
         echo(
             
-            "<form class='form' action='../../actions/comments_basic_edit.php'>".
+            "<form class='form' action='../../actions/comments/comment_basic_edit.php' method='POST'>".
                 "<div>".
+                "<input hidden type='text' value=".$comment['comment_id']." name='id'>".
                 "<span>".$comment['comment']."</span>".
                 "<span>".$comment['score']."</span>".
-                "<select name='' id=''>".
+                "<select name='option' id=''>".
                     "<option value=''>Select an option</option>".
-                    "<option value=''>Publish</option>".
-                    "<option value=''>Ban</option>".
+                    "<option value='1'>Publish</option>".
+                    "<option value='-1'>Ban</option>".
                 "</select>".
-                "<button type='submit'>Edit</button>".
+                "<button name='submit' type='submit'>Edit</button>".
                 "</div>".
             "</form>"
             

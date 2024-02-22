@@ -1,6 +1,6 @@
 <?php
 //Connect Database.
-$conn = mysqli_connect('localhost','root','','47_hotel');
+$conn = mysqli_connect('localhost','root','','043_hotel');
 
 //Connection check
 if(!$conn){

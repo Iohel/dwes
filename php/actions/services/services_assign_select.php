@@ -11,29 +11,20 @@
 
     $services = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    echo ("<table>
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Insert</th>
-    </tr>");
-
+    echo ("<form class='form' action='../../../testChamber/json_test.php' method='POST'>");
+    
     foreach($services as $service){
-    echo (
-        "<tr>
-            <td>" . $service['service_name'] . "</td>
-            <td>" . $service['service_price'] . "</td>   
-            <td>
-                <form action='../../../testChamber/json_test.php' method='POST'>
-                    <input type='text' value='$service[service_id]' name=service_id hidden>
-                    <input type='text' value='$reservation_id' name=reservation_id hidden>
-                    <input type='submit' name='submit' value='Insert'>
-                </form>
-            </td> 
-        </tr>"
-    );   
+        echo (
+            "<div>".
+            "<input type='text' value=".$service['service_id']."name='service_id' hidden=''>".
+            "<input type='text' value='$reservation_id' name='reservation_id' hidden=''>".
+            "<span>".$service['service_price']."</span>".
+            "<span>".$service['service_name']."</span>".
+            "<input type='checkbox' value=".$service['service_id']." name='extras[]' id=''>".
+            "</div>"
+        );   
     }
-    echo ("</table>");
+    echo ("<input type='submit' name='submit' value='Insert'>"."</form>");
     mysqli_free_result($result);
     
     //Disconnect Database

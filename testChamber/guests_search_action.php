@@ -2,7 +2,7 @@
 <?php
     //SQL query
     $a = $_POST["value"];
-    $sql = "SELECT * from 043_customers WHERE customer_name LIKE '$a%'";
+    $sql = "SELECT * from 043_guests WHERE guest_name LIKE '$a%'";
 
     $result = mysqli_query($conn, $sql);
 

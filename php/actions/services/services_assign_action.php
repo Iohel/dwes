@@ -5,7 +5,7 @@
     $extras=$_POST['extras'];
     
     $reservation_id = $_POST['reservation_id'];
-    $service_id = $_POST['service_id'] ?? 4; 
+    $service_id = $_POST['service_id']; 
 
     $sql = "SELECT * from 043_reservations WHERE reservation_id = $reservation_id";
     $result = mysqli_query($conn, $sql);

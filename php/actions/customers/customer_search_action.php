@@ -1,7 +1,7 @@
 <?php require($_SERVER['DOCUMENT_ROOT']. '/student043/dwes/php/template/connection.php');?>
 <?php
     //SQL query
-    $a = $_GET["q"];
+    $a = $_POST["value"];
     $sql = "SELECT * from 043_customers WHERE customer_name LIKE '$a%'";
 
     $result = mysqli_query($conn, $sql);

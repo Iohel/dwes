@@ -16,7 +16,7 @@
                 }
             }
             
-            http.open("POST","../../actions/customers/customer_search_action.php",true);
+            http.open("POST","./customer_search_action.php",true);
             http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             http.send("value="+str);
             
@@ -29,5 +29,5 @@
     <input type="text" id="fname" name="fname" onkeyup="showUser(this.value)">
 </form>
 <div id="output"></div>
-
 <?php require($_SERVER['DOCUMENT_ROOT']. '/student043/dwes/php/template/footer.php');?>
+<!-- Turn guests  -->

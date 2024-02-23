@@ -11,7 +11,7 @@
 
     $services = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    echo ("<form class='form' action='../../../testChamber/json_test.php' method='POST'>");
+    echo ("<form class='form' action='./services_assign_action.php' method='POST'>");
     
     foreach($services as $service){
         echo (

@@ -19,6 +19,7 @@
     echo ("<table>
     <tr>
         <th>Room_Number</th>
+        <th>Customer Name</th>
         <th>Customer DNI</th>
         <th>Start_Date</th>
         <th>End_Date</th>
@@ -35,6 +36,7 @@
         echo (
         "<tr>
             <td>" . $rooms[$reservation['room_id']-1]['hotel_number'] . "</td>       
+            <td>" . $customers[$reservation['customer_id']-1]['customer_name'] . "</td>      
             <td>" . $customers[$reservation['customer_id']-1]['customer_dni'] . "</td>
             <td>" . $reservation['start_date'] . "</td>     
             <td>" . $reservation['end_date'] . "</td>     

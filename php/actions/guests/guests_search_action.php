@@ -1,11 +1,11 @@
 
-<?php require($_SERVER['DOCUMENT_ROOT']. '/student043/dwes/php/template/header.php');?>
 <?php require($_SERVER['DOCUMENT_ROOT']. '/student043/dwes/php/template/connection.php');?>
 <?php
     
     //SQL query
+    $value = $_POST['value'];
     $reservation_id = $_POST['reservation_id'];
-    $sql = 'SELECT * from 043_guests';
+    $sql = "SELECT * from 043_guests WHERE guest_name LIKE '$value%'";
 
     $result = mysqli_query($conn, $sql);
 
@@ -44,4 +44,3 @@
     
 ?>
 
-<?php require($_SERVER['DOCUMENT_ROOT']. '/student043/dwes/php/template/footer.php');?>

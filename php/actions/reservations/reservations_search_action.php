@@ -4,9 +4,9 @@
     //SQL query
     $nameDni = $_POST["value"];
 
-    $sql_reservations = "SELECT * from 043_reservations WHERE reservation_status = 'Booked'";
+    $sql_reservations = "SELECT * from 043_reservations $nameDni";
     $sql_rooms = 'SELECT * from 043_rooms';
-    $sql_customers = "SELECT * from 043_customers WHERE customer_name LIKE '$nameDni%' OR customer_dni LIKE '$nameDni%'";
+    $sql_customers = "SELECT * from 043_customers";
 
     $result1 = mysqli_query($conn, $sql_reservations);
     $result2 = mysqli_query($conn, $sql_rooms);

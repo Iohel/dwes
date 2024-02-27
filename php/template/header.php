@@ -5,12 +5,16 @@
         session_destroy();
        
     }
-    
+    if (isset($_POST['start_date'])) {
+        setcookie("start_date",$_POST['start_date'],time() + 86400);
+        setcookie("end_date",$_POST['end_date'],time() + 86400);
+    }
     $username = $_SESSION['username'] ?? 'Guest';
     $login = $_SESSION['status'] ?? 'Login';
     $form = $_SESSION['log_form'] ?? '/student043/dwes/php/forms/login_form.php';
     $type = $_SESSION['type'] ?? 'Guest';
     $customer_id = $_SESSION['customer_id'] ?? '';
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -7,7 +7,7 @@
     }
     
     $username = $_SESSION['username'] ?? 'Guest';
-    $login = $_SESSION['login'] ?? 'Login';
+    $login = $_SESSION['status'] ?? 'Login';
     $form = $_SESSION['log_form'] ?? '/student043/dwes/php/forms/login_form.php';
     $type = $_SESSION['type'] ?? 'Guest';
     $customer_id = $_SESSION['customer_id'] ?? '';

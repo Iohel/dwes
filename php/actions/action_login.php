@@ -15,7 +15,7 @@
     $_SESSION['customer_id'] = $user[0]["customer_id"];
     $_SESSION['username'] = $user[0]["username"];
     $_SESSION['type'] = $user[0]["type"];
-    $_SESSION['login'] = "Logout";
+    $_SESSION['status'] = "Logout";
     $_SESSION['log_form'] = "index.php";
 
     

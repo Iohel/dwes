@@ -16,7 +16,7 @@
                 }
             }
             
-            http.open("POST","./guests_search_action.php",true);
+            http.open("POST","../../actions/guests/guests_search_action.php",true);
             http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             http.send("value="+str +"&"+ "reservation_id="+id);
             
@@ -26,7 +26,7 @@
 </script>
 <?php
 
-    $reservation_id = $_POST['reservation_id'] ?? 1;
+    $reservation_id = $_POST['reservation_id'] ?? $_COOKIE['reservation_id'];
 
 ?>
 

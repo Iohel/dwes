@@ -12,17 +12,17 @@
 <main>
     <form action="../../actions/reservations/reservations_basic_update.php" method="POST" class="form">
         <h1>Update Single Form</h1>
-        <div hidden>
-            <label for="">reservation_id</label>
-            <input type="number" name="reservation_id" value="<?php echo $reservation_id?>" readonly> 
+        <div >
+            <label hidden for="">reservation_id</label>
+            <input hidden type="number" name="reservation_id" value="<?php echo $reservation_id?>" readonly> 
         </div>
-        <div hidden>
-            <label for="">room_id</label>
-            <input type="number" name="room_id" value="<?php echo $reservation[0]["room_id"]?>">
+        <div >
+            <label hidden for="">room_id</label>
+            <input hidden type="number" name="room_id" value="<?php echo $reservation[0]["room_id"]?>">
         </div>
-        <div hidden>
-            <label for="">customer_id</label>
-            <input type="number" name="customer_id" value=<?php echo $reservation[0]["customer_id"]?>>
+        <div >
+            <label hidden for="" hidden>customer_id</label>
+            <input hidden type="number" name="customer_id" value=<?php echo $reservation[0]["customer_id"]?>>
         </div>
         <div>
             <label for="">start_date</label>
@@ -37,8 +37,8 @@
             <input type="number" name="number_guests" value=<?php echo $reservation[0]["number_guests"]?>>
         </div>
         <div>
-            <label for="">Input status of reservation.</label>
-            <input type="text" name="reservation_status" value=<?php echo $reservation[0]["reservation_status"]?>>
+            <label hidden for="">Input status of reservation.</label>
+            <input hidden type="text" name="reservation_status" value=<?php echo $reservation[0]["reservation_status"]?>>
         </div>
         <input type="submit" name="submit" value="submit">
     </form>

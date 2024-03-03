@@ -16,4 +16,3 @@
         
     </form>
 </main>
-<?php print_r($_COOKIE)?>

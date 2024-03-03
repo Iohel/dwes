@@ -13,7 +13,7 @@
         $epoch = $json[0]["EpochTime"];
         $dt = new DateTime("@$epoch");  // convert UNIX timestamp to PHP DateTime
        
-        echo($json[0]["WeatherIcon"]." || ".
+        echo($json[0]["WeatherText"]." || ".
              $temperature["Value"].
              $temperature["Unit"]." || ".
              $dt->format('Y-m-d H:i:s')

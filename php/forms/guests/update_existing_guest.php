@@ -3,6 +3,7 @@
 <?php
     $guest_id = $_POST['guest_id'];
     
+    $control = $_POST['assign'] ?? "";
     $sql = "SELECT * FROM 043_guests WHERE guest_id = $guest_id";
 
     $result = mysqli_query($conn, $sql);
@@ -21,7 +22,7 @@
     
     <label for="">guest_surname</label>
     <input type="text" name="guest_surname" value=<?php echo $guests[0]["guest_surname"]?>>
-    
+    <input type='text' name="assign" value=<?php echo($control)?>>
     <label for="">guest_dob</label>
     <input type="date" name="guest_dob" value=<?php echo $guests[0]["guest_dob"]?>>
     

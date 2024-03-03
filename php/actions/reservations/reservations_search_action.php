@@ -32,12 +32,19 @@
         <th>Check Out</th>
     </tr>");
     foreach($reservations as $reservation){
+        foreach ($customers as $customer) {
+            
+            if ($customer["customer_id"]==$reservation['customer_id']) {
+                $customer_name = $customer["customer_name"]; 
+                $customer_dni = $customer["customer_dni"]; 
+            }
+        }
         
         echo (
         "<tr>
             <td>" . $rooms[$reservation['room_id']-1]['hotel_number'] . "</td>       
-            <td>" . $customers[$reservation['customer_id']-1]['customer_name'] . "</td>
-            <td>" . $customers[$reservation['customer_id']-1]['customer_dni'] . "</td>
+            <td>" . $customer_name . "</td>
+            <td>" . $customer_dni . "</td>
             <td>" . $reservation['start_date'] . "</td>     
             <td>" . $reservation['end_date'] . "</td>     
             <td>" . $reservation['number_guests'] . "</td>     
@@ -61,7 +68,7 @@
                 </form>
             </td>
             <td>
-                <form action='../../actions/guests/guests_assign_select.php' method='POST'>
+                <form action='../../forms/guests/guests_search_form.php' method='POST'>
                     <input type='text' value='$reservation[reservation_id]' name=reservation_id hidden>
                     <input type='submit' name='submit' value='Guests'>
                 </form>

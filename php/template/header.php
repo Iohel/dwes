@@ -6,9 +6,14 @@
        
     }
     if (isset($_POST['start_date'])) {
-        setcookie("start_date",$_POST['start_date'],time() + 86400);
-        setcookie("end_date",$_POST['end_date'],time() + 86400);
+        setcookie("start_date",$_POST['start_date'],time() + 86400,"/");
+        setcookie("end_date",$_POST['end_date'],time() + 86400,"/" );
+        setcookie("test","test",time()+86400);
     }
+    if(isset($_POST['reservation_id'])){
+        setcookie("reservation_id",$_POST['reservation_id'],time()+86400,"/");
+    }
+    
     $username = $_SESSION['username'] ?? 'Guest';
     $login = $_SESSION['status'] ?? 'Login';
     $form = $_SESSION['log_form'] ?? '/student043/dwes/php/forms/login_form.php';
@@ -46,11 +51,11 @@
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}?>>
+            <button class="dropbtn" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}if($type == 'Customer'){echo 'hidden';}?>>
                 Customer
             </button>
             <div class="dropdown-content">
-                <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/actions/customers/customers_basic_select.php'>Customer Select</a></li>
+                <!-- <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/actions/customers/customers_basic_select.php'>Customer Select</a></li> -->
                 <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/forms/customers/customer_search_form.php'>Search Customer</a></li>
                 <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/forms/customers/insert_single_customer.php'>Customer Insert</a></li>
                 <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/forms/customers/select_single_customer_update.php'>Customer Update</a></li>
@@ -59,19 +64,19 @@
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}?>>
+            <button class="dropbtn" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}if($type == 'Customer'){echo 'hidden';}?>>
                 Reservation
             </button>
             <div class="dropdown-content">
-                <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/actions/reservations/reservations_basic_select.php'>Reservation Select</a></li>
+                <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/forms/reservations/reservations_search_form.php'>Reservation Search</a></li>
                 <li><a class="dropdown-item" href='/student043/dwes/php/actions/reservations/reservations_select_from_customer.php'>Reservation Customer Select</a></li>
-                <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/forms/reservations/insert_new_reservation.php'>Reservation Insert</a></li>
+                <!-- <li <?php if($type == 'Customer'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/forms/reservations/insert_new_reservation.php'>Reservation Insert</a></li> -->
                 <li><a class="dropdown-item" href='/student043/dwes/php/forms/reservations/select_single_reservation_update.php'>Reservation Update</a></li>
                 <li <?php if($type == 'Admin'){echo 'hidden';}?>><a class="dropdown-item" href='/student043/dwes/php/forms/reservations/select_single_reservation_delete.php'>Reservation Delete</a></li>
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}?>>
+            <button class="dropbtn" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}if($type == 'Customer'){echo 'hidden';}?>>
                 Services
             </button>
             <div class="dropdown-content">
@@ -86,10 +91,20 @@
                 Guests
             </button>
             <div class="dropdown-content">
-                <li><a class="dropdown-item" href='/student043/dwes/php/actions/guests/guests_basic_select.php'>Guest Select</a></li>
+                <li><a class="dropdown-item" href='/student043/dwes/php/forms/guests/guests_search_form.php'>Guest Search</a></li>
                 <li><a class="dropdown-item" href='/student043/dwes/php/forms/guests/insert_single_guest.php'>Guest Insert</a></li>
                 <li><a class="dropdown-item" href='/student043/dwes/php/forms/guests/select_single_guest_update.php'>Guest Update</a></li>
                 <li><a class="dropdown-item" href='/student043/dwes/php/forms/guests/select_single_guest_delete.php'>Guest Delete</a></li>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn" type="button" data-bs-toggle="dropdown" aria-expanded="false" <?php if($type == 'Guest'){echo 'hidden';}if($type == 'Customer'){echo 'hidden';}?>>
+                Utilities
+            </button>
+            <div class="dropdown-content">
+                <li><a class="dropdown-item" href='/student043/dwes/weather/weather_test.php'>Weather Update</a></li>
+                <li><a class="dropdown-item" href='/student043/dwes/php/forms/comment/comment_edit_form.php'>Comment Manager</a></li>
+                <li><a class="dropdown-item" href='/student043/dwes/php/forms/upload_image_form.php'>Upload Image</a></li>
             </div>
         </div>
         <div class="dropdown">

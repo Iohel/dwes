@@ -6,24 +6,19 @@
     
     $sql_reservations = "SELECT * from 043_reservations WHERE customer_id = '$customer_id'";
     $sql_rooms = 'SELECT * from 043_rooms';
-    $sql_customers = 'SELECT * from 043_customers';
     $sql_comments = "SELECT reservation_id FROM 043_comments";
 
     $result1 = mysqli_query($conn, $sql_reservations);
     $result2 = mysqli_query($conn, $sql_rooms);
-    $result3 = mysqli_query($conn, $sql_customers);
     $result4 = mysqli_query($conn, $sql_comments);
 
     $reservations = mysqli_fetch_all($result1, MYSQLI_ASSOC);
     $rooms = mysqli_fetch_all($result2, MYSQLI_ASSOC);
-    $customers = mysqli_fetch_all($result3, MYSQLI_ASSOC);
     $comments = mysqli_fetch_all($result4, MYSQLI_ASSOC);
     $disable = false;
     echo ("<table>
     <tr>
         <th>Room_Number</th>
-        <th>Customer Name</th>
-        <th>Customer DNI</th>
         <th>Start_Date</th>
         <th>End_Date</th>
         <th>Number_Guests</th>
@@ -47,9 +42,8 @@
         if($disable){
             echo (
                 "<tr>
-                <td>" . $rooms[$reservation['room_id']-1]['hotel_number'] . "</td>       
+                    <td>" . $rooms[$reservation['room_id']-1]['hotel_number'] . "</td>       
                 
-                <td>" . $customers[$reservation['customer_id']-1]['customer_dni'] . "</td>
                     <td>" . $reservation['start_date'] . "</td>     
                     <td>" . $reservation['end_date'] . "</td>     
                     <td>" . $reservation['number_guests'] . "</td>     
@@ -78,8 +72,7 @@
         }else{
             echo (
                 "<tr>
-                    <td>" . $rooms[$reservation['room_id']-1]['hotel_number'] . "</td>       
-                    <td>" . $customers[$reservation['customer_id']-1]['customer_dni'] . "</td>
+                    <td>" . $rooms[$reservation['room_id']-1]['hotel_number'] . "</td>  
                     <td>" . $reservation['start_date'] . "</td>     
                     <td>" . $reservation['end_date'] . "</td>     
                     <td>" . $reservation['number_guests'] . "</td>     
@@ -112,7 +105,6 @@
     
     mysqli_free_result($result1);
     mysqli_free_result($result2);
-    mysqli_free_result($result3);
     
     //Disconnect Database
     mysqli_close($conn);

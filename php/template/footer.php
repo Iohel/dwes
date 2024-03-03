@@ -1,3 +1,3 @@
-<footer>Here where the footer will be... eventually.</footer>
+<footer></footer>
 </body>
 </html>

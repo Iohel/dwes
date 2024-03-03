@@ -13,10 +13,11 @@
             if (this.readyState == 4 && this.status == 200) {
                     
                 document.getElementById("output").innerHTML = this.responseText;
+                console.log("test");
             }
         }
             
-        http.open("POST","./reservations_search_action.php",true);
+        http.open("POST","../../actions/reservations/reservations_search_action.php",true);
         http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         http.send("value="+str);
             

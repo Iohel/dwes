@@ -1,4 +1,4 @@
-<?php require($_SERVER['DOCUMENT_ROOT']. '/student043/dwes/php/template/header.php');?>
+
 <?php
     //variable catching 
     $reservation_id = $_POST['reservation_id'];
@@ -11,7 +11,7 @@
 
     $result = mysqli_query($conn, $sql);
 
-
+    header("Location: /student043/dwes/php/forms/reservations/reservations_search_form.php");
     
 ?>
 <?php require($_SERVER['DOCUMENT_ROOT']. '/student043/dwes/php/template/footer.php');?>

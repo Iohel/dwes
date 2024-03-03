@@ -1,6 +1,6 @@
-<?php require($_SERVER['DOCUMENT_ROOT']. '/student043/dwes/php/template/header.php');?>
 <?php require($_SERVER['DOCUMENT_ROOT']. '/student043/dwes/php/template/connection.php');?>
 <?php
+    session_start(); 
     if(isset($_POST['submit'])){
         
         $username = $_POST['username'];
@@ -18,6 +18,7 @@
     $_SESSION['status'] = "Logout";
     $_SESSION['log_form'] = "index.php";
 
+    header("Location: /student043/dwes/");
     
 ?>
 

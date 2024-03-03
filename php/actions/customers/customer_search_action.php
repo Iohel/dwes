@@ -37,7 +37,7 @@
                 </form>
             </td>
             <td>
-            <form action='../reservations/reservations_select_from_customer.php' method='POST'>
+            <form action='../../forms/reservations/reservations_search_form.php' method='POST'>
                     <input type='text' value='$customer[customer_id]' name=customer_id hidden>
                     <input type='submit' name='submit' value='Reservations'>
                 </form>

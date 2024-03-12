@@ -1,6 +1,6 @@
 <?php
 //Connect Database.
-$conn = mysqli_connect('dwesdatabase','dwess1234','test1234','dwesdatabase');
+$conn = mysqli_connect('dwesdatabase','dwess1234','test1234.','dwesdatabase');
 
 //Connection check
 if(!$conn){
